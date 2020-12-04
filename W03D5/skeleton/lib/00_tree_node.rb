@@ -26,7 +26,7 @@ class PolyTreeNode
   end
 
   def remove_child(child_node)
-    raise 'node is not a child' if !child_node.parent == self
+    raise 'node is not a child' if child_node.parent != self
     child_node.parent = nil
   end
 
@@ -39,6 +39,18 @@ class PolyTreeNode
     nil
   end
 
+  def bfs(value)
+    #queue 
+    arr_queue = [self]
+    while !arr_queue.empty?
+      node = arr_queue.shift
+      return node if node.value == value
+      node.children.each do |child_node|
+        arr_queue << child_node
+      end
+    end
+    nil
+  end
   
 
 end
