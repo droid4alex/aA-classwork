@@ -15,12 +15,22 @@ module Slidable_Module
   def moves
     pos = [0,0]
     row, col = pos
-    arr = []
-
+    all_h = []
+    all_d = []
     HORIZONTAL_DIRS.each do |h_pos|
       h_row, h_col = h_pos
-      grow_unblocked_moves_in_dir(h_row, h_col) #returns all moves in h_pos
-
+      all_h += grow_unblocked_moves_in_dir(h_row, h_col) #returns all moves in h_pos
+    end
+    DIAGONAL_DIRS.each do |d_pos|
+      h_row, h_col = d_pos
+      all_d += grow_unblocked_moves_in_dir(h_row, h_col) #returns all moves in d_pos
+    end
+    if self.class == Queen
+      return all_h + all_d
+    elsif self.class == Bishop
+      return all_d
+    elsif self.class == Rook
+      return all_h
     end
   end
 
