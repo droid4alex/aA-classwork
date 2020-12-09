@@ -11,7 +11,7 @@ module Stepable_Module
         knight_moves.each do |sub_arr|
             knight_r, knight_c = sub_arr
             row_dx, col_dy = [knight_r + row, knight_c + col]
-            if row_dx < 8 && row_dx >= 0 && row_dy < 8 && row_dy >= 0
+            if row_dx < 8 && row_dx >= 0 && col_dy < 8 && col_dy >= 0
                 if @board.rows[row_dx][col_dy] == @board.null_piece
                     all_knight << [row_dx, col_dy] 
                 elsif @board.rows[row_dx][col_dy].color != @color
@@ -23,7 +23,7 @@ module Stepable_Module
         king_moves.each do |sub_arr|
             king_r, king_c = sub_arr
             row_dx, col_dy = [king_r + row, king_c + col]
-            if row_dx < 8 && row_dx >= 0 && row_dy < 8 && row_dy >= 0
+            if row_dx < 8 && row_dx >= 0 && col_dy < 8 && col_dy >= 0
                 if @board.rows[row_dx][col_dy] == @board.null_piece
                     all_king << [row_dx, col_dy] 
                 elsif @board.rows[row_dx][col_dy].color != @color
