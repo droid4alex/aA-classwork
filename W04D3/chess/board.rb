@@ -5,7 +5,7 @@ require 'byebug'
 
 class Board
   #include Singleton
-
+  attr_reader :rows, :null_piece
   def initialize
     @rows = Array.new(8){Array.new(8)}
     @null_piece = Null_Piece.instance
