@@ -1,0 +1,135 @@
+=> [32m#<Board:0x00007fffc38e6d98[0m
+ @null_piece[32m=[0m[1;36mnil[0m,
+ @rows[32m=[0m
+  [[[32m#<Piece:0x00007fffc38e6398[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m0[0m, [1;34m0[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6348[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m0[0m, [1;34m1[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e62f8[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m0[0m, [1;34m2[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e62a8[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m0[0m, [1;34m3[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6280[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m0[0m, [1;34m4[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e62d0[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m0[0m, [1;34m5[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6320[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m0[0m, [1;34m6[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6370[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m0[0m, [1;34m7[0m][32m>[0m],
+   [[32m#<Piece:0x00007fffc38e64d8[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m1[0m, [1;34m0[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e64b0[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m1[0m, [1;34m1[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6488[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m1[0m, [1;34m2[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6460[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m1[0m, [1;34m3[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6438[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m1[0m, [1;34m4[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6410[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m1[0m, [1;34m5[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e63e8[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m1[0m, [1;34m6[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e63c0[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:white[0m,
+     @pos[32m=[0m[[1;34m1[0m, [1;34m7[0m][32m>[0m],
+   [[1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m],
+   [[1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m],
+   [[1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m],
+   [[1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m, [1;36mnil[0m],
+   [[32m#<Piece:0x00007fffc38e6258[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m6[0m, [1;34m0[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6230[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m6[0m, [1;34m1[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6208[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m6[0m, [1;34m2[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e61e0[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m6[0m, [1;34m3[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e61b8[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m6[0m, [1;34m4[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6190[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m6[0m, [1;34m5[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6168[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m6[0m, [1;34m6[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6140[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m6[0m, [1;34m7[0m][32m>[0m],
+   [[32m#<Piece:0x00007fffc38e6118[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m7[0m, [1;34m0[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e60c8[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m7[0m, [1;34m1[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6078[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m7[0m, [1;34m2[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6028[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m7[0m, [1;34m3[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6000[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m7[0m, [1;34m4[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e6050[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m7[0m, [1;34m5[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e60a0[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m7[0m, [1;34m6[0m][32m>[0m,
+    [32m#<Piece:0x00007fffc38e60f0[0m
+     @board[32m=[0m[32m#<Board:0x00007fffc38e6d98[0m ...[32m>[0m,
+     @color[32m=[0m[33m:black[0m,
+     @pos[32m=[0m[[1;34m7[0m, [1;34m7[0m][32m>[0m]][32m>[0m
