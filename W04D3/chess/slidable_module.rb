@@ -13,8 +13,8 @@ module Slidable_Module
 
   #returns 2d array of possible moves; hit piece or off board
   def moves
-    pos = [0,0]
-    row, col = pos
+    # pos = [0,0]
+    # row, col = pos
     all_h = []
     all_d = []
     HORIZONTAL_DIRS.each do |h_pos|
@@ -39,8 +39,9 @@ module Slidable_Module
     row, col = @pos
     while dx + row < 8 && dx + row >= 0 && dy + col < 8 && dy + col >= 0 
       row_dx, col_dy = [dx + row, dy + col]
-      arr << [row_dx, col_dy] if @board.rows[row_dx][col_dy] == @board.null_piece
-      if @board.rows[row_dx][col_dy].color != @color
+      if @board.rows[row_dx][col_dy] == @board.null_piece
+        arr << [row_dx, col_dy] 
+      elsif @board.rows[row_dx][col_dy].color != @color
         arr << [row_dx, col_dy]
         break
       end

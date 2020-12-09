@@ -1,4 +1,4 @@
-require_relative 'piece.rb'
+require_relative 'rook_bishop_queen'
 require_relative 'null_piece'
 
 require 'byebug'
@@ -72,14 +72,14 @@ class Board
     white_pieces.each do |matrix|
       matrix.each do |pos|
         row, col = pos
-        @rows[row][col] = Queen.new(:white, self, pos)
+        @rows[row][col] = Piece.new(:white, self, pos)
       end
     end
 
     black_pieces.each do |matrix|
       matrix.each do |pos|
         row, col = pos
-        @rows[row][col] = Queen.new(:black, self, pos)
+        @rows[row][col] = Piece.new(:black, self, pos)
       end
     end
 
