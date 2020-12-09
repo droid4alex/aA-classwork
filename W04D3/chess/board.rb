@@ -1,12 +1,14 @@
 require_relative 'piece.rb'
-require 'singleton'
+require_relative 'null_piece'
+
 require 'byebug'
+
 class Board
-  include Singleton
+  #include Singleton
 
   def initialize
     @rows = Array.new(8){Array.new(8)}
-    @null_piece = nil   #come back to this... singleton
+    @null_piece = Null_Piece.instance
     fill_board          
   end
 
@@ -15,7 +17,11 @@ class Board
     @rows.each_with_index do |row,i1|
       row.each_with_index do |el, i2|
         #debugger
-        test_rows[i1][i2] = (el.color.to_s + " " + el.class.to_s) if el != nil
+        if el != @null_piece
+          test_rows[i1][i2] = (el.color.to_s + " " + el.class.to_s)
+        else
+          test_rows[i1][i2] = "-----------"
+        end
       end
     end
     test_rows.each_with_index do |row|
@@ -77,6 +83,11 @@ class Board
       end
     end
 
+    @rows.each_with_index do |row, i1|
+      row.each_with_index do |ele, i2|
+        @rows[i1][i2] = @null_piece if ele == nil
+      end
+    end
 
   end
 
