@@ -1,5 +1,6 @@
 require_relative 'rook_bishop_queen'
 require_relative 'knight_king'
+require_relative 'pawn'
 require_relative 'null_piece'
 
 require 'byebug'
@@ -42,14 +43,14 @@ class Board
   def move_piece(color, start_pos, end_pos)
     row_start, col_start = start_pos
     row_end, col_end = end_pos
-    raise "No piece here" if @rows[row_start][col_start] == nil
+    raise "No piece here" if @rows[row_start][col_start] == @null_piece
     raise "Out of bounds" if row_end < 0 || row_end > 7
     raise "Out of bounds" if col_end < 0 || col_end > 7
-    raise "Same color piece here" if @rows[row_end][col_end] != nil && @rows[row_end][col_end].color == color 
+    raise "Same color piece here" if @rows[row_end][col_end] != @null_piece && @rows[row_end][col_end].color == color 
     piece = @rows[row_start][col_start]
     @rows[row_end][col_end] = piece
     piece.pos = end_pos
-    @rows[row_start][col_start] = nil
+    @rows[row_start][col_start] = @null_piece
 
   end
 
@@ -73,14 +74,14 @@ class Board
     white_pieces.each do |matrix|
       matrix.each do |pos|
         row, col = pos
-        @rows[row][col] = Piece.new(:white, self, pos)
+        @rows[row][col] = Pawn.new(:white, self, pos)
       end
     end
 
     black_pieces.each do |matrix|
       matrix.each do |pos|
         row, col = pos
-        @rows[row][col] = Piece.new(:black, self, pos)
+        @rows[row][col] = Pawn.new(:black, self, pos)
       end
     end
 

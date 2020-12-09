@@ -1,12 +1,12 @@
 require_relative 'piece'
-
+require 'byebug'
 class Pawn < Piece
 
   def moves
-    row, col = @pos
+    #row, col = @pos
     #white pawn move [1,0] ... black pawn move [-1,0]
     #bottom 3 functions to move; forward direction, forward step, side attack
- 
+    forward_steps + side_attacks
   end
 
   def at_start_row?
@@ -31,12 +31,14 @@ class Pawn < Piece
     arr = []
     row, col = @pos
     if at_start_row?
-      arr << [row+forward_dir, col] if @rows[row+forward_dir][col] == @null_piece 
+      if @board.rows[row+forward_dir][col] == @board.null_piece 
+        arr << [row+forward_dir, col]
+        arr << [row+(forward_dir*2), col] if @board.rows[row+(forward_dir*2)][col] == @board.null_piece
+      end      
     else  
-      return 1
+      arr << [row+forward_dir, col] if @board.rows[row+forward_dir][col] == @board.null_piece
     end
-
-
+    arr
   end
 
   def side_attacks
@@ -44,11 +46,11 @@ class Pawn < Piece
     arr = []
 
     if self.color == :white
-      arr << [row+1,col+1] if @rows[row+1][col+1] != @null_piece && @rows[row+1][col+1].color != :white
-      arr << [row+1,col-1] if @rows[row+1][col-1] != @null_piece && @rows[row+1][col-1].color != :white
+      arr << [row+1,col+1] if @board.rows[row+1][col+1] != @board.null_piece && @board.rows[row+1][col+1].color != :white
+      arr << [row+1,col-1] if @board.rows[row+1][col-1] != @board.null_piece && @board.rows[row+1][col-1].color != :white
     else  
-      arr << [row-1,col+1] if @rows[row-1][col+1] != @null_piece && @rows[row-1][col+1].color != :black
-      arr << [row-1,col-1] if @rows[row-1][col-1] != @null_piece && @rows[row-1][col-1].color != :black
+      arr << [row-1,col+1] if @board.rows[row-1][col+1] != @board.null_piece && @board.rows[row-1][col+1].color != :black
+      arr << [row-1,col-1] if @board.rows[row-1][col-1] != @board.null_piece && @board.rows[row-1][col-1].color != :black
     end
 
     arr
