@@ -1,6 +1,8 @@
 require_relative 'slidable_module'
 # require_relative 'rook_bishop_queen.rb'
 
+#see solution for pieces.rb requiring all pieces!!
+
 class Piece
   attr_reader :color, :board
   attr_accessor :pos
