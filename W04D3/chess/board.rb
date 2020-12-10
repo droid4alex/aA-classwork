@@ -72,16 +72,40 @@ class Board
     black_pieces = [black_pawns,black_rook,black_knight,black_bishop,black_king,black_queen]
   
     white_pieces.each do |matrix|
-      matrix.each do |pos|
-        row, col = pos
-        @rows[row][col] = Pawn.new(:white, self, pos)
+      case
+      when matrix == white_pawns
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Pawn.new(:white, self, pos)}
+      when matrix == white_rook
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Rook.new(:white, self, pos)}
+      when matrix == white_knight
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Knight.new(:white, self, pos)}
+      when matrix == white_bishop
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Bishop.new(:white, self, pos)}
+      when matrix == white_king
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = King.new(:white, self, pos)}
+      when matrix == white_queen
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Queen.new(:white, self, pos)}
       end
     end
 
+    #case
+    #when matrix == white_pawns
+      #perform code
+
     black_pieces.each do |matrix|
-      matrix.each do |pos|
-        row, col = pos
-        @rows[row][col] = Pawn.new(:black, self, pos)
+      case
+      when matrix == black_pawns
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Pawn.new(:black, self, pos)}
+      when matrix == black_rook
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Rook.new(:black, self, pos)}
+      when matrix == black_knight
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Knight.new(:black, self, pos)}
+      when matrix == black_bishop
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Bishop.new(:black, self, pos)}
+      when matrix == black_king
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = King.new(:black, self, pos)}
+      when matrix == black_queen
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Queen.new(:black, self, pos)}
       end
     end
 
