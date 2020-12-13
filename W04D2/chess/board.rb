@@ -76,11 +76,7 @@ class Board
         @rows[row][col] = Piece.new(:black, self, pos)
       end
     end
-
-
   end
-
-
 end
 
 b = Board.new
