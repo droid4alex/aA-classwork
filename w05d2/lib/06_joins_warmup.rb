@@ -117,15 +117,16 @@ def casablanca_cast
       actors.name as actor_name
     FROM
       actors
-    join
-      castings on (
-        SELECT
+    JOIN
+      castings on castings.actor_id = actors.id
+    WHERE
+      castings.movie_id = (SELECT
           id
         FROM
           movies
         WHERE
           title = 'Casablanca'
-        ) = actor_id
+      );
   SQL
 end
 
