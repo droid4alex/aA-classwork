@@ -1,8 +1,8 @@
 require 'singleton'
 require 'sqlite3'
 
-class QuestionsDBConnection < SQLite3::Database
-    include 'singleton'
+class QuestionsDatabase < SQLite3::Database
+    include Singleton
     
     def initialize
         super('questions.db')
@@ -11,33 +11,17 @@ class QuestionsDBConnection < SQLite3::Database
     end
 end
 
-
-
 class Users 
-
     attr_reader :id, :fname, :lname
-
-    def initialize(options)
+    def initialize(options = {})
         @id = options['id']
         @fname = options['fname']
         @lname = options['lname']
     end
-
     def find_by_id(id)
-
-        QuestionsDBConnection.instance.execute(<<-SQL, self.id, self.fname, self.lname)
-
-         SELECT
-             users.*
-         FROM
-             users
-         WHERE
-             users.id = self.id
-        SQL
-
+        
     end
-
-    def find_by_name
+    def find_by_name(fname, lname)
     end
 
 end
