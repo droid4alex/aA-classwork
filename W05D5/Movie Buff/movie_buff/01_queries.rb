@@ -1,3 +1,4 @@
+
 def it_was_ok
   # Consider the following:
   #
@@ -44,13 +45,14 @@ def biggest_cast
   #
   # Find the id and title of the 3 movies with the
   # largest casts (i.e most actors)
+  
   Movie
     .select(:id, :title)
     .joins(:castings)
     .group('movies.id')
-    .order('COUNT(actors.id) DESC')
+    .order('COUNT(castings.id) DESC')
     .limit(3)
-
+# Movie.select(:id, :title).joins(:castings).group('movies.id').order('COUNT(castings.id) DESC').limit(3)
 end
 
 def directed_by_one_of(them)
@@ -65,7 +67,9 @@ def directed_by_one_of(them)
   # Movie.where(yr: years)
   #
   # Find the id and title of all the movies directed by one of 'them'.
-
+  Movie
+    .select(:id, :title)
+    .where('director_id IN (?)', them)
 end
 
 def movie_names_before_1940
