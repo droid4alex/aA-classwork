@@ -69,9 +69,11 @@ def directed_by_one_of(them)
   # Find the id and title of all the movies directed by one of 'them'.
   Movie
     .select(:id, :title)
-    .where('director_id IN (?)', them)
+    .joins(:actors)
+    .where('name IN (?)', them)
 end
-
+#id: 360, name: "George Lucas">
+#id: 18, name: "Steven Spielberg">]
 def movie_names_before_1940
   # Consider the following:
   #
