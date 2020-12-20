@@ -11,25 +11,25 @@ class Board
   def initialize
     @rows = Array.new(8){Array.new(8)}
     @null_piece = Null_Piece.instance
-    fill_board          
+    fill_board
+    test_print
   end
 
   def test_print
     test_rows = Array.new(8){Array.new(8)}
-    @rows.each_with_index do |row,i1|
+    self.rows.each_with_index do |row,i1|
       row.each_with_index do |el, i2|
         #debugger
         if el != @null_piece
-          test_rows[i1][i2] = (el.color.to_s + " " + el.class.to_s)
+          test_rows[i1][i2] = [el.symbol]
         else
-          test_rows[i1][i2] = "-----------"
+          test_rows[i1][i2] = '-'
         end
       end
     end
     test_rows.each_with_index do |row|
-      p row
+      p row.join(" ")
     end
-    return nil
   end
 
   def [](pos)
@@ -74,17 +74,17 @@ class Board
     white_pieces.each do |matrix|
       case
       when matrix == white_pawns
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Pawn.new(:white, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Pawn.new(:white, self, pos, '♙')}
       when matrix == white_rook
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Rook.new(:white, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Rook.new(:white, self, pos, '♖')}
       when matrix == white_knight
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Knight.new(:white, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Knight.new(:white, self, pos, '♘')}
       when matrix == white_bishop
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Bishop.new(:white, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Bishop.new(:white, self, pos, '♗')}
       when matrix == white_king
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = King.new(:white, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = King.new(:white, self, pos, '♔')}
       when matrix == white_queen
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Queen.new(:white, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Queen.new(:white, self, pos, '♕')}
       end
     end
 
@@ -95,17 +95,17 @@ class Board
     black_pieces.each do |matrix|
       case
       when matrix == black_pawns
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Pawn.new(:black, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Pawn.new(:black, self, pos, '♟')}
       when matrix == black_rook
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Rook.new(:black, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Rook.new(:black, self, pos, '♜')}
       when matrix == black_knight
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Knight.new(:black, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Knight.new(:black, self, pos, '♞')}
       when matrix == black_bishop
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Bishop.new(:black, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Bishop.new(:black, self, pos, '♝')}
       when matrix == black_king
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = King.new(:black, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = King.new(:black, self, pos, '♚')}
       when matrix == black_queen
-        matrix.each {|pos| @rows[pos[0]][pos[1]] = Queen.new(:black, self, pos)}
+        matrix.each {|pos| @rows[pos[0]][pos[1]] = Queen.new(:black, self, pos, '♛')}
       end
     end
 
@@ -116,8 +116,6 @@ class Board
     end
 
   end
-
-
 end
 
 b = Board.new

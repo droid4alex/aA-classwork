@@ -14,10 +14,24 @@ class Display
     def render
         row, col = @cursor.cursor_pos
         if @cursor.selected
-            @board.rows[row][col].class.to_s.colorize(:red)
+            @board.rows[row][col].symbol.to_s.colorize(:red)
         else  
-            @board.rows[row][col].class.to_s.colorize(:white)
+            @board.rows[row][col].symbol.to_s.colorize(:white)
         end
-        # @board[row][col]        
+        print_arr = Array.new(8, Array.new())
+        @board.rows.each_with_index do |row, i|
+            row.each do |el|
+                if el.class != Null_Piece
+                     print_arr[i] << el.symbol.to_s.colorize(:red) if el.color == :white
+                     print_arr[i] << el.symbol.to_s.colorize(:white) if el.color == :black
+                 else
+                    print_arr[i] << '-'
+                 end
+            end                   
+            # p row.join(" ")
+        end
+        print_arr.each do |row|
+            p row
+        end
     end
 end
