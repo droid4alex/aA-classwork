@@ -70,7 +70,7 @@ def directed_by_one_of(them)
   Movie
     .select(:id, :title)
     .joins(:actors)
-    .where('name IN (?)', them)
+    .where(actors: {name: them})
 end
 #id: 360, name: "George Lucas">
 #id: 18, name: "Steven Spielberg">]

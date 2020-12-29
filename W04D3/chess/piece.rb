@@ -4,13 +4,14 @@ require_relative 'slidable_module'
 #see solution for pieces.rb requiring all pieces!!
 
 class Piece
-  attr_reader :color, :board
+  attr_reader :color, :board, :symbol
   attr_accessor :pos
   # include Slidable_Module
 
-  def initialize(symbol, board, pos)
-    @color = symbol
+  def initialize(color, board, pos, symbol)
+    @color = color
     @board = board
-    @pos = pos    
+    @pos = pos
+    @symbol = symbol
   end
 end
