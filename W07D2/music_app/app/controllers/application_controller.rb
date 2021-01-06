@@ -5,10 +5,13 @@ class ApplicationController < ActionController::Base
   #session[:session_token]    #this is the cookie
   def login(user)
     session[:session_token] = user.reset_session_token!
+    @current_user = user
   end
 
   def current_user
-    @current_user = User.find_by(session_token: session[:session_token])
+    return nil unless session[:session_token] #good practice, so we don't uncessarily ping the database
+    @current_user ||= User.find_by(session_token: session[:session_token])
+
   end
   
   def logged_in?
@@ -21,13 +24,15 @@ class ApplicationController < ActionController::Base
     current_user.reset_session_token! if logged_in?
     session[:session_token] = nil
     @current_user = nil
+
   end
 
   def require_logged_in
     #debugger
-    if current_user.nil?
-      redirect_to new_session_url
-    end
+    redirect_to new_session_url unless logged_in?
+    # if current_user.nil?
+    #   redirect_to new_session_url
+    # end
   end
 end
 # Finally, take some time to refactor out shared code & add some convenience methods to ApplicationController. Make sure to include the appropriate methods in your views as helper methods (e.g. helper_method :current_user). You'll probably want:

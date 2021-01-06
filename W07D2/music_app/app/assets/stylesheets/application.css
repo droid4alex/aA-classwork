@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+h1 {
+  font-family: 'Bungee Inline', cursive;
+  font-size: 75px;
+  margin-bottom: 30px;
+  color: #FDDB61;
+}
+
+.main {
+  width: 800px;
+  min-height: 100px;
+  margin: auto;
+  padding: 30px;
+  border: solid grey;
+  border-width: 0 5px;
+  background-color: #343030;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+<h1 class="logo">
+      <div class="username">
+    <form class= "button">
+ <h2 class="smaller_logo">
+    <form class="button">
+<form class="form">

@@ -12,8 +12,9 @@ class SessionsController < ApplicationController
       #debugger
       redirect_to user_url(user)
     else
-      flash.now[:errors] = ['User not found']
+      flash.now[:errors] = ['Invalid credentials']
       # p flash.now[:errors]
+      #render :new
       render :new
     end
   end

@@ -1,13 +1,21 @@
-<h1>New User for Music App</h1>
+<h2 class="smaller_logo">New User</h2>
+<br>
+    <form class="button" action= "<%= new_session_url %>" method="GET">
+    <input type="submit" value="GO TO SIGN-IN">
+    </form>
+<br>
 
-<form action="/users" method="POST">
+<form class="form" action="/users" method="POST">
 <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
-
+<p>
 <label for="email">Email</label>
 <input id="email" type="text" name="user[email]">
-
+</p>
+<br>
+<p>
 <label for="password">Password</label>
 <input id="password" type="password" name="user[password]">
-
+</p>
+<br>
 <input type="submit" value="CREATE NEW USER">
 </form>
