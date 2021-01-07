@@ -28,13 +28,13 @@ RSpec.describe User, type: :model do
         expect(user.password).not_to eq('password') # checks password is not in DB
     end
 
-  #   it 'ensure password is encrypted using BCrypt' do
-  #       expect(BCrypt::Password).to receive(:create).with('abcdef')
-  #       FactoryBot.build(:user, password: 'abcdef')
-  #   end
+    it 'ensure password is encrypted using BCrypt' do
+        expect(BCrypt::Password).to receive(:create).with('abcdef')
+        FactoryBot.build(:user, password: 'abcdef')
+    end
   end
 
-  # describe 'associations' do
-  #     it {should have_many(:goals)}
-  # end
+  describe 'associations' do
+      it {should have_many(:goals)}
+  end
 end
