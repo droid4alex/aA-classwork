@@ -8,14 +8,16 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
-
+    current_user.reset_session_token! if logged_in?
+    @current_user = nil #why is this @current_user and not just current_user
+    session[:session_token] = nil
   end
 
   def logged_in?
-
+    !!current_user
   end
 
   def login(user)
-    
+    session[:session_token] = user.reset_session_token!
   end
 end
