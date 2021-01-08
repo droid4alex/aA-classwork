@@ -1,0 +1,54 @@
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    border-bottom: 2px solid #e2e3e4;
+}
+
+.left-nav > ul,
+.right-nav > ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-nav {
+
+  > ul {
+    > li {
+    }
+  }
+
+  span {
+
+  }
+}
+
+.right-nav  {
+
+  > ul {
+
+    > li {
+  
+    }
+
+    > li:last-of-type {
+  
+    }
+  }
+  
+  i {
+
+  }
+}
+
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+  background-color: $light-gray;
+}
+
+.right-nav > ul > li:last-of-type {
+  padding: 0px 15px;
+}
+.left-nav > ul > li:last-of-type {
+  padding: 0px 25px;
+}
