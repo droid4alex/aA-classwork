@@ -39,5 +39,5 @@ Array.prototype.transpose = function() {
   }
   return arr;
 }
-arr2 = [[1,2],["a","b"]].transpose()
-console.log(arr2)
+// arr2 = [[1,2],["a","b"]].transpose()
+// console.log(arr2)
