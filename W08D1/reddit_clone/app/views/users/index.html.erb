@@ -1,0 +1,9 @@
+<h1>Welcome to Reddit Clone!</h1>
+
+<% @users.each do |user| %>
+    <%= user.username %>
+<% end %>
+
+<a href="<%= new_user_url %>">Sign Up</a>
+
+<a href="<%= new_session_url %>">Log In</a>

@@ -1,0 +1,30 @@
+// Use the gear_dropdown.png screenshot as a style guide
+#gear-dropdown {
+  z-index: 5;
+  position: absolute;
+  top: 28px;
+  right: -1px;
+  width: 240px;
+  padding: 13px 10px;
+  background-color: white;
+  box-shadow: 1px 3px 5px grey;
+    #editions, #help {
+    position: relative;
+    li {
+      padding: 5px 3px;
+    }
+    .editions li:not(:first-child):hover{
+      background-color: #ebebeb;
+      a{
+        background-color: #ebebeb;
+      }
+    }
+    .help li:not(:first-child):hover{
+      text-decoration: underline solid #527697;
+    }
+
+    .help li:not(:first-child) a{
+           color: #527697;
+    }
+  }  
+}
