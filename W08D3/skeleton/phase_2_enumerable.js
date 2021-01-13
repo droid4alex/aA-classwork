@@ -16,5 +16,13 @@ Array.prototype.myEach = function(cb) {
     // cb(this[i])
   }
 }
-// arr = [1, 2, 3];
-// arr.myEach(console.log);
+
+Array.prototype.myMap = function(cb) {
+  let arr = [];
+  // this.myEach(arr.push(cb))  
+  arr.push(cb(this.myEach))
+  return arr;
+}
+
+arr = [1, 2, 3];
+arr.myMap(console.log);
