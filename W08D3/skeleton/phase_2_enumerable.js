@@ -30,9 +30,17 @@ Array.prototype.myMap = function(cb) {
   return arr;
 }
 
-let arr = [1, 2, 3];
-console.log(arr.myMap(cb));
+// let arr = [1, 2, 3];
+// console.log(arr.myMap(cb));
 
-Array.prototype.myReduce = function(cb,) {
-
+Array.prototype.myReduce = function(cb, initial) {
+  let acc = initial;
+  acc ||= this[0];
+  this.myEach( el => acc += cb(el))
+  return acc;
 }
+// let cb = function (el) {
+//   return el * 2;
+// }
+let arr = [1, 2, 3];
+console.log(arr.myReduce(cb));
