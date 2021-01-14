@@ -1,0 +1,22 @@
+/* PHASE 0: Sidebar */
+.profile-picture {
+  display: block;
+  border: 1px solid #000;
+  margin-top: -25px;
+  position: relative;
+}
+
+.profile-info {
+  font-weight: 900;
+  font-size: 11px;
+}
+
+.profile-nav {
+  font-size: 14px;
+  margin: 20px 0;
+}
+.profile-nav :not(:last-child){
+  border-bottom: 1px solid #000;
+}
+
+
