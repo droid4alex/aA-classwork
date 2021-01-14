@@ -3,13 +3,20 @@ if (typeof window === 'undefined'){
   var Piece = require("./piece");
 }
 // DON'T TOUCH THIS CODE
+// black piece1 starts on[3, 3]
+// white piece1 starts on[4, 3]
+// black piece2 starts on[4, 4]
+// white piece2 starts on[3, 4]
 
 /**
  * Returns a 2D array (8 by 8) with two black pieces at [3, 4] and [4, 3]
  * and two white pieces at [3, 3] and [4, 4]
  */
 function _makeGrid () {
+  // let board = ;
 }
+
+// let arr = new Array(this.length).fill(0).map(() => new Array(this.length).fill(0));
 
 /**
  * Constructs a Board with a starting grid set up.
