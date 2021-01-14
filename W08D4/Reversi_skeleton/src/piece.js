@@ -10,14 +10,14 @@ function Piece (color) {
  */
 Piece.prototype.oppColor = function (piece) {
     // debugger
-    return (this.color === `black` ? `white` : `black`);
+    return (this.color === 'black' ? 'white' : 'black');
 };
 
 /**
  * Changes the piece's color to the opposite color.
  */
 Piece.prototype.flip = function (piece) {
-    this.color = (this.color === `black` ? `white` : `black`);
+    this.color = (this.color === 'black' ? 'white' : 'black');
 };
 
 /**
@@ -25,7 +25,7 @@ Piece.prototype.flip = function (piece) {
  * based on its color.
  */
 Piece.prototype.toString = function (piece) {
-    return (this.color === `black` ? `B` : `W`);
+    return (this.color === 'black' ? 'B' : 'W');
 };
 
 // DON'T TOUCH THIS CODE

@@ -3,21 +3,21 @@ if (typeof window === 'undefined'){
   var Piece = require("./piece");
 }
 // DON'T TOUCH THIS CODE
-// black piece1 starts on[3, 3]
-// white piece1 starts on[4, 3]
-// black piece2 starts on[4, 4]
-// white piece2 starts on[3, 4]
 
 /**
  * Returns a 2D array (8 by 8) with two black pieces at [3, 4] and [4, 3]
  * and two white pieces at [3, 3] and [4, 4]
  */
 function _makeGrid () {
-  // let board = ;
+  let board = new Array(8).fill().map(() => new Array(8).fill());
+  board[3][3] = new Piece(`white`);
+  board[4][4] = new Piece(`white`);
+  board[3][4] = new Piece(`black`);
+  board[4][3] = new Piece(`black`);
+
+  return board;
 }
-
-// let arr = new Array(this.length).fill(0).map(() => new Array(this.length).fill(0));
-
+// console.log(_makeGrid());
 /**
  * Constructs a Board with a starting grid set up.
  */
@@ -35,6 +35,9 @@ Board.DIRS = [
  * Checks if a given position is on the Board.
  */
 Board.prototype.isValidPos = function (pos) {
+  let row = pos[0];
+  let col = pos[1];
+  return (row < 8 && row >= 0 && col < 8 && col >= 0)
 };
 
 /**
@@ -42,6 +45,13 @@ Board.prototype.isValidPos = function (pos) {
  * throwing an Error if the position is invalid.
  */
 Board.prototype.getPiece = function (pos) {
+  let x = pos[0];
+  let y = pos[1];
+  if (this.isValidPos([x,y])) {
+    return this[x][y];
+  } else {
+    throw "Error: Invalid Pos";
+  };
 };
 
 /**
