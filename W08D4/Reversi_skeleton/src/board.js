@@ -88,14 +88,28 @@ Board.prototype.isOccupied = function (pos) {
  *
  * Returns empty array if no pieces of the opposite color are found.
  */
+// for (let i = 0; i < Board.DIRS.length; i++) {
+//   console.log(Board.DIRS[i]);
+//   // Board._positionsToFlip(pos, color, Board.DIRS[i]);
+// }
+ 
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
-  let direction = DIRS;
-  if (direction === []) {return piecesToFlip};
-  let x = pos[0];
-  let y = pos[1];
-  return (piecesToFlip === [] ? [] : piecesToFlip);
-  
-  
+  if (dir === []) {return piecesToFlip};
+  let rowPos = pos[0];
+  let colPos = pos[1];
+  let rowDir = dir[0][0];
+  let colDir = dir[0][1];
+  let potential = [rowPos + rowDir, colPos + colDir];
+  if (this.isValidPos(potential) && 
+      this.isOccupied(potential) && 
+      !this.isMine(potential, color)) {
+    piecesToFlip.push(potential)
+  }
+  else {
+    return [];
+  }
+  dir.unshift();
+  this._positionsToFlip(pos, color, dir, piecesToFlip);  
 };
 
 /**
