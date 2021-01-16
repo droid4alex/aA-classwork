@@ -89,27 +89,46 @@ Board.prototype.isOccupied = function (pos) {
  * Returns empty array if no pieces of the opposite color are found.
  */
 // for (let i = 0; i < Board.DIRS.length; i++) {
-//   console.log(Board.DIRS[i]);
-//   // Board._positionsToFlip(pos, color, Board.DIRS[i]);
+//   let piecesToFlip = this._positionsToFlip(pos, color, Board.DIRS[i])
+//   console.log(piecesToFlip);
 // }
  
+
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
-  if (dir === []) {return piecesToFlip};
-  let rowPos = pos[0];
-  let colPos = pos[1];
-  let rowDir = dir[0][0];
-  let colDir = dir[0][1];
-  let potential = [rowPos + rowDir, colPos + colDir];
-  if (this.isValidPos(potential) && 
-      this.isOccupied(potential) && 
+  let piecesToFlip2 = [];
+  
+  for (let i = 0; i < Board.DIRS.length; i++) {
+    let arr = [];
+    let rowDir = Board.DIRS[i][0];
+    let colDir = Board.DIRS[i][1];
+    let potential = [pos[0] + rowDir, pos[1] + colDir];
+    if (this.isValidPos(potential) &&
+      this.isOccupied(potential) &&
       !this.isMine(potential, color)) {
-    piecesToFlip.push(potential)
+      arr.push(potential);
+    } //adding first potential move
+
+    while (arr != []){
+      rowDir = rowDir + Board.DIRS[i][0];
+      colDir = colDir + Board.DIRS[i][1];
+      potential = [pos[0] + rowDir, pos[1] + colDir];
+      if (this.isValidPos(potential) && 
+          this.isOccupied(potential) && 
+          !this.isMine(potential, color)) {
+          arr.push(potential);
+        }
+      else if (this.isValidPos(potential) &&
+        this.isOccupied(potential) &&
+        this.isMine(potential, color)){
+        piecesToFlip2 = piecesToFlip2.concat(arr);
+        break;
+        }
+      else {
+        break;
+        }
+      }    
   }
-  else {
-    return [];
-  }
-  dir.unshift();
-  this._positionsToFlip(pos, color, dir, piecesToFlip);  
+  return piecesToFlip2;
 };
 
 /**
