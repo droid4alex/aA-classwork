@@ -14,7 +14,13 @@ class View {
   }
 
   makeMove($square) {
-    alert('Click');
+    $square.attr('id', 'id1');
+    let div = document.getElementById('id1');
+    let pos = div.getBoundingClientRect();
+    alert("Coordinates: " + pos.left + "px, " + pos.top + "px");
+    this.game.playMove(pos);
+    
+    $square.addClass('selected');
   }
 
   setupBoard() {

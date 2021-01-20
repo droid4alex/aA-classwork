@@ -27,11 +27,10 @@ li {
     cursor: pointer;
 }
 
-/* .changeColor > li.change {
+.selected {
     background-color: white;
-    border: 8px solid black;
-} */
-
+    
+}
 
 li:hover {
     background-color: yellow;

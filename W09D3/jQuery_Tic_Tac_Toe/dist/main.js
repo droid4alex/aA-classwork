@@ -45,7 +45,7 @@ eval("\nconst MoveError = function (msg) { this.msg = msg; };\n\n// MoveError re
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\n  constructor(game, $el) {\n    this.game = game;\n    this.$el = $el;\n    this.setupBoard();\n    this.bindEvents();\n  }\n\n  bindEvents() {\n    this.$el.on('click', 'li', (e) => {\n      const $square = $(e.target);\n      this.makeMove($square);\n    })\n  }\n\n  makeMove($square) {\n    alert('Click');\n  }\n\n  setupBoard() {\n    const $ul = $('<ul></ul>');\n    for (let i = 0; i < 3; i++){\n      for (let j = 0; j < 3; j++) {\n        const $li = $('<li class=\"col'+i+'\"></li>');\n        $ul.append($li);\n      }\n    }\n\n    this.$el.append($ul);\n  }\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
+eval("class View {\n  constructor(game, $el) {\n    this.game = game;\n    this.$el = $el;\n    this.setupBoard();\n    this.bindEvents();\n  }\n\n  bindEvents() {\n    this.$el.on('click', 'li', (e) => {\n      const $square = $(e.target);\n      this.makeMove($square);\n    })\n  }\n\n  makeMove($square) {\n    $square.attr('id', 'id1');\n    let div = document.getElementById('id1');\n    let pos = div.getBoundingClientRect();\n    alert(\"Coordinates: \" + pos.left + \"px, \" + pos.top + \"px\");\n    this.game.playMove(pos);\n    \n    $square.addClass('selected');\n  }\n\n  setupBoard() {\n    const $ul = $('<ul></ul>');\n    for (let i = 0; i < 3; i++){\n      for (let j = 0; j < 3; j++) {\n        const $li = $('<li class=\"col'+i+'\"></li>');\n        $ul.append($li);\n      }\n    }\n\n    this.$el.append($ul);\n  }\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
 
 /***/ })
 
