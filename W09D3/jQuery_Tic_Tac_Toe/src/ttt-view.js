@@ -5,15 +5,25 @@ class View {
     this.setupBoard();
   }
 
-  bindEvents() {}
+  bindEvents() {
+    
+  }
 
   makeMove($square) {}
 
   setupBoard() {
     const $ul = $('<ul></ul>');
-    const $li = $('<li>test</li>');
-    $li.text('test');
-    $ul.append($li);
+    for (let i = 0; i < 3; i++){
+      for (let j = 0; j < 3; j++) {
+        const $li = $('<li class="col'+i+'"></li>');
+        $ul.append($li);
+      }
+    }
+    // <ul>
+    // <li></li> x9
+    // </ul>
+    // $li.text('test');
+
     this.$el.append($ul);
   }
 }
