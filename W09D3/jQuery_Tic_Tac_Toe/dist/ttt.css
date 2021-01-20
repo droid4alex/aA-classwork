@@ -1,21 +1,37 @@
+h1 {
+    display: block;
+    margin: 30px;
+    font-size: 50px;
+    text-align: center;
+}
+
+
+
 ul {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    width: 90px;
-    /* list-style-type: square; */
-
+    width: 300px;
+    margin: 30px auto;
+    position: relative;
 }
 
 li {
     display: flex;
     flex-wrap: wrap;
+    float: left;
     border: 1px solid black;
-    width: 25px;
-    height: 25px;
+    width: 90px;
+    height: 90px;
     background: gray;
-    cursor: pointer;    
+    cursor: pointer;
 }
+
+/* .changeColor > li.change {
+    background-color: white;
+    border: 8px solid black;
+} */
+
 
 li:hover {
     background-color: yellow;
