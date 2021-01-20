@@ -1,0 +1,12 @@
+ul {
+    display: flex;
+    border: 2px black;
+    flex-wrap: wrap;
+    width: 100px;
+}
+
+li {
+    background: gray;
+    border: 2px black;
+    width: 100px;
+}
