@@ -1,11 +1,23 @@
+html, body, figure, figcaption, ul, li, h1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    text-align: inherit;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+}
 h1 {
     display: block;
     margin: 30px;
     font-size: 50px;
     text-align: center;
 }
-
-
 
 ul {
     list-style-type: none;
@@ -25,6 +37,7 @@ li {
     height: 90px;
     background: gray;
     cursor: pointer;
+    text-align: center;
 }
 
 .selected {
@@ -32,18 +45,52 @@ li {
     
 }
 
+.x {
+    font-size: 80px;
+    line-height: 80px;
+}
+
+.o {
+    font-size: 80px;
+    line-height: 80px;
+}
+
 li:hover {
     background-color: yellow;
 }
 
-.col0 {
+#li00 {
     /* background: yellow; */
 }
 
-.col1 {
-    /* background: red; */
+#li01 {
+    /* background: yellow; */
 }
 
-.col2 {
-    /* background: green; */
+#li02 {
+    /* background: yellow; */
+}
+
+#li10 {
+    /* background: yellow; */
+}
+
+#li11 {
+    /* background: yellow; */
+}
+
+#li12 {
+    /* background: yellow; */
+}
+
+#li20 {
+    /* background: yellow; */
+}
+
+#li21 {
+    /* background: yellow; */
+}
+
+#li22 {
+    /* background: yellow; */
 }
