@@ -23,8 +23,8 @@ class View {
     this.game.playMove(pos);
     // alert(this.game.currentPlayer);
     $square.addClass('selected');
- // $('.bucket-list').html('<p>wassuuuuuup</p>')
-  // $('.bucket-list').text('hi')
+    // $('.bucket-list').html('<p>wassuuuuuup</p>')
+    // $('.bucket-list').text('hi')
     if (this.game.currentPlayer === 'o'){
       $square.addClass('o');
       $('.o').html('O')
