@@ -1,0 +1,66 @@
+html, head, body, header,
+nav, h1, a, ul, li, main,
+section, p, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+header, nav, main, section,
+footer, small {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#clock-header {
+  font-family: Potta One;
+  background-color: orange;
+  border: 3px solid black;
+  margin: 10px 100px;
+  padding: 10px;
+}
+
+#time {
+  display: flex;
+  justify-content: space-between;
+}
+
+#date {
+  display: flex;
+  justify-content: space-between;
+}
+
+#coolClock {
+  display: flex;
+  justify-content: center;
+}
+
+#weather-header {
+  font-family: Potta One;
+  background-color: lightblue;
+  border: 3px solid black;
+  margin: 10px 100px;
+  padding: 10px;
+}
+
+#cool-weather {
+  display: flex;
+  justify-content: center;
+}
