@@ -1,0 +1,70 @@
+html, head, body, header,
+nav, h1, a, ul, li, main,
+section, p, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+header, nav, main, section,
+footer, small {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.board {
+    border: solid black 1px;
+    width: 180px;
+    height: 180px;
+    display: block;
+    margin: auto;
+    font-size: 12px;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+}
+
+.tile {
+    border: solid darkgrey 3px;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+}
+
+.unexplored, .bombed {
+    border-style: outset;
+    background-color: lightgray;
+    color: lightgray;
+}
+
+.explored {
+    border-style: inset;
+    background-color: darkgrey;
+}
+
+.flagged {
+    background-color: red;
+}
+
+/* .bombed {
+    background-color: black;
+} */
