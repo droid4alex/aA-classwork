@@ -1,9 +1,5 @@
-# @guests.each do |guest|
-#     # debugger
-#     json.set! guest.id do
-#         json.partial! "guest", guest: guest
-#     end
-# end
-json.extract! @guests, :id, :name, :age, :favorite_color
+json.array! @guests do |guest|    
+  json.partial! "guest", guest: guest    
+end
 
 # json.extract! guest, :name, :age, :favorite_color
