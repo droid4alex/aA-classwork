@@ -117,6 +117,34 @@ var requestAllPokemon = function requestAllPokemon() {
 
 /***/ }),
 
+/***/ "./frontend/components/app.jsx":
+/*!*************************************!*\
+  !*** ./frontend/components/app.jsx ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _pokemon_pokemon_index_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pokemon/pokemon_index_container */ "./frontend/components/pokemon/pokemon_index_container.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+var App = function App() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Route"], {
+    path: "/",
+    component: _pokemon_pokemon_index_container__WEBPACK_IMPORTED_MODULE_1__["default"]
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
 /***/ "./frontend/components/pokemon/pokemon_index.jsx":
 /*!*******************************************************!*\
   !*** ./frontend/components/pokemon/pokemon_index.jsx ***!
@@ -128,6 +156,7 @@ var requestAllPokemon = function requestAllPokemon() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pokemon_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pokemon_index_item */ "./frontend/components/pokemon/pokemon_index_item.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -149,6 +178,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -174,11 +204,10 @@ var PokemonIndex = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "pokedex"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.pokemon.map(function (poke) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "pokemon-index-item"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, poke.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: poke.imageUrl
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, poke.name));
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pokemon_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: poke.id,
+          poke: poke
+        });
       })));
     }
   }]);
@@ -226,6 +255,74 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/pokemon/pokemon_index_item.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/pokemon/pokemon_index_item.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var PokemonIndexItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(PokemonIndexItem, _React$Component);
+
+  var _super = _createSuper(PokemonIndexItem);
+
+  function PokemonIndexItem() {
+    _classCallCheck(this, PokemonIndexItem);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(PokemonIndexItem, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "pokemon-index-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/pokemon/".concat(this.props.poke.id)
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.poke.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.poke.imageUrl
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.poke.name)));
+    }
+  }]);
+
+  return PokemonIndexItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (PokemonIndexItem);
+
+/***/ }),
+
 /***/ "./frontend/components/root.jsx":
 /*!**************************************!*\
   !*** ./frontend/components/root.jsx ***!
@@ -238,8 +335,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _components_pokemon_pokemon_index_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../components/pokemon/pokemon_index_container */ "./frontend/components/pokemon/pokemon_index_container.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom_cjs_react_router_dom_min__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom/cjs/react-router-dom.min */ "./node_modules/react-router-dom/cjs/react-router-dom.min.js");
+/* harmony import */ var react_router_dom_cjs_react_router_dom_min__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom_cjs_react_router_dom_min__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app */ "./frontend/components/app.jsx");
 
 
 
@@ -249,10 +347,7 @@ var Root = function Root(_ref) {
   var store = _ref.store;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
     store: store
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["HashRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
-    path: "/",
-    component: _components_pokemon_pokemon_index_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-  })));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom_cjs_react_router_dom_min__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_app__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
@@ -31264,6 +31359,20 @@ function warning(message) {
   /* eslint-enable no-empty */
 
 }
+
+/***/ }),
+
+/***/ "./node_modules/react-router-dom/cjs/react-router-dom.min.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-router-dom/cjs/react-router-dom.min.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}Object.defineProperty(exports,"__esModule",{value:!0});var reactRouter=__webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js"),React=_interopDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js")),history=__webpack_require__(/*! history */ "./node_modules/history/esm/history.js");__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"),__webpack_require__(/*! tiny-warning */ "./node_modules/tiny-warning/dist/tiny-warning.esm.js");var invariant=_interopDefault(__webpack_require__(/*! tiny-invariant */ "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js"));function _extends(){return(_extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e}).apply(this,arguments)}function _inheritsLoose(e,t){e.prototype=Object.create(t.prototype),(e.prototype.constructor=e).__proto__=t}function _objectWithoutPropertiesLoose(e,t){if(null==e)return{};var r,o,n={},a=Object.keys(e);for(o=0;o<a.length;o++)r=a[o],0<=t.indexOf(r)||(n[r]=e[r]);return n}var BrowserRouter=function(n){function e(){for(var e,t=arguments.length,r=new Array(t),o=0;o<t;o++)r[o]=arguments[o];return(e=n.call.apply(n,[this].concat(r))||this).history=history.createBrowserHistory(e.props),e}return _inheritsLoose(e,n),e.prototype.render=function(){return React.createElement(reactRouter.Router,{history:this.history,children:this.props.children})},e}(React.Component),HashRouter=function(n){function e(){for(var e,t=arguments.length,r=new Array(t),o=0;o<t;o++)r[o]=arguments[o];return(e=n.call.apply(n,[this].concat(r))||this).history=history.createHashHistory(e.props),e}return _inheritsLoose(e,n),e.prototype.render=function(){return React.createElement(reactRouter.Router,{history:this.history,children:this.props.children})},e}(React.Component),resolveToLocation=function(e,t){return"function"==typeof e?e(t):e},normalizeToLocation=function(e,t){return"string"==typeof e?history.createLocation(e,null,null,t):e},forwardRefShim=function(e){return e},forwardRef=React.forwardRef;function isModifiedEvent(e){return!!(e.metaKey||e.altKey||e.ctrlKey||e.shiftKey)}void 0===forwardRef&&(forwardRef=forwardRefShim);var LinkAnchor=forwardRef(function(e,t){var r=e.innerRef,o=e.navigate,n=e.onClick,a=_objectWithoutPropertiesLoose(e,["innerRef","navigate","onClick"]),i=a.target,c=_extends({},a,{onClick:function(t){try{n&&n(t)}catch(e){throw t.preventDefault(),e}t.defaultPrevented||0!==t.button||i&&"_self"!==i||isModifiedEvent(t)||(t.preventDefault(),o())}});return c.ref=forwardRefShim!==forwardRef&&t||r,React.createElement("a",c)}),Link=forwardRef(function(e,a){var t=e.component,i=void 0===t?LinkAnchor:t,c=e.replace,u=e.to,s=e.innerRef,f=_objectWithoutPropertiesLoose(e,["component","replace","to","innerRef"]);return React.createElement(reactRouter.__RouterContext.Consumer,null,function(t){t||invariant(!1);var r=t.history,e=normalizeToLocation(resolveToLocation(u,t.location),t.location),o=e?r.createHref(e):"",n=_extends({},f,{href:o,navigate:function(){var e=resolveToLocation(u,t.location);(c?r.replace:r.push)(e)}});return forwardRefShim!==forwardRef?n.ref=a||s:n.innerRef=s,React.createElement(i,n)})}),forwardRefShim$1=function(e){return e},forwardRef$1=React.forwardRef;function joinClassnames(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return t.filter(function(e){return e}).join(" ")}void 0===forwardRef$1&&(forwardRef$1=forwardRefShim$1);var NavLink=forwardRef$1(function(e,f){var t=e["aria-current"],l=void 0===t?"page":t,r=e.activeClassName,p=void 0===r?"active":r,R=e.activeStyle,h=e.className,d=e.exact,y=e.isActive,m=e.location,v=e.sensitive,b=e.strict,w=e.style,x=e.to,g=e.innerRef,P=_objectWithoutPropertiesLoose(e,["aria-current","activeClassName","activeStyle","className","exact","isActive","location","sensitive","strict","style","to","innerRef"]);return React.createElement(reactRouter.__RouterContext.Consumer,null,function(e){e||invariant(!1);var t=m||e.location,r=normalizeToLocation(resolveToLocation(x,t),t),o=r.pathname,n=o&&o.replace(/([.+*?=^!:${}()[\]|/\\])/g,"\\$1"),a=n?reactRouter.matchPath(t.pathname,{path:n,exact:d,sensitive:v,strict:b}):null,i=!!(y?y(a,t):a),c=i?joinClassnames(h,p):h,u=i?_extends({},w,{},R):w,s=_extends({"aria-current":i&&l||null,className:c,style:u,to:r},P);return forwardRefShim$1!==forwardRef$1?s.ref=f||g:s.innerRef=g,React.createElement(Link,s)})});Object.defineProperty(exports,"MemoryRouter",{enumerable:!0,get:function(){return reactRouter.MemoryRouter}}),Object.defineProperty(exports,"Prompt",{enumerable:!0,get:function(){return reactRouter.Prompt}}),Object.defineProperty(exports,"Redirect",{enumerable:!0,get:function(){return reactRouter.Redirect}}),Object.defineProperty(exports,"Route",{enumerable:!0,get:function(){return reactRouter.Route}}),Object.defineProperty(exports,"Router",{enumerable:!0,get:function(){return reactRouter.Router}}),Object.defineProperty(exports,"StaticRouter",{enumerable:!0,get:function(){return reactRouter.StaticRouter}}),Object.defineProperty(exports,"Switch",{enumerable:!0,get:function(){return reactRouter.Switch}}),Object.defineProperty(exports,"generatePath",{enumerable:!0,get:function(){return reactRouter.generatePath}}),Object.defineProperty(exports,"matchPath",{enumerable:!0,get:function(){return reactRouter.matchPath}}),Object.defineProperty(exports,"useHistory",{enumerable:!0,get:function(){return reactRouter.useHistory}}),Object.defineProperty(exports,"useLocation",{enumerable:!0,get:function(){return reactRouter.useLocation}}),Object.defineProperty(exports,"useParams",{enumerable:!0,get:function(){return reactRouter.useParams}}),Object.defineProperty(exports,"useRouteMatch",{enumerable:!0,get:function(){return reactRouter.useRouteMatch}}),Object.defineProperty(exports,"withRouter",{enumerable:!0,get:function(){return reactRouter.withRouter}}),exports.BrowserRouter=BrowserRouter,exports.HashRouter=HashRouter,exports.Link=Link,exports.NavLink=NavLink;
+//# sourceMappingURL=react-router-dom.min.js.map
+
 
 /***/ }),
 
