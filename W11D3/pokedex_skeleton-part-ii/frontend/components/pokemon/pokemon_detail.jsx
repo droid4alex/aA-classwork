@@ -7,6 +7,7 @@ class PokemonDetail extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <section className="pokemon-detail">
                 <ul>
@@ -16,3 +17,5 @@ class PokemonDetail extends React.Component {
         )
     }
 }
+
+export default PokemonDetail
