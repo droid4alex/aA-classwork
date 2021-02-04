@@ -6,8 +6,12 @@ class PokemonDetail extends React.Component {
         super(props);
     }
 
+    componentDidMount(){
+        this.props.requestSinglePokemon(this.props.match.params.pokemonId)
+    }
+
     render() {
-        debugger
+        // debugger
         return (
             <section className="pokemon-detail">
                 <ul>

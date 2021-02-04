@@ -216,9 +216,14 @@ var PokemonDetail = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(PokemonDetail, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.requestSinglePokemon(this.props.match.params.pokemonId);
+    }
+  }, {
     key: "render",
     value: function render() {
-      debugger;
+      // debugger
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "pokemon-detail"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.props.pokemon.name)));
@@ -248,15 +253,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(state, ownProps) {// return state.entities.pokemon[ownProps.match.params.pokemonId]
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var pokemon = state.entities.pokemon[ownProps.match.params.pokemonId]; // debugger
+
+  return {
+    pokemon: pokemon
+  };
 };
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {// return {
-  //     requestSinglePokemon: id => dispatch(requestSinglePokemon(id))
-  // }
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    requestSinglePokemon: function requestSinglePokemon(id) {
+      return dispatch(Object(_actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_1__["requestSinglePokemon"])(id));
+    }
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, null)(_pokemon_detail__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_pokemon_detail__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 

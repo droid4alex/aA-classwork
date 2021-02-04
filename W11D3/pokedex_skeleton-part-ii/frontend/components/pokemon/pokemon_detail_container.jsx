@@ -3,13 +3,17 @@ import { requestSinglePokemon } from '../../actions/pokemon_actions'
 import PokemonDetail from './pokemon_detail'
 
 const mapStateToProps = (state, ownProps) => {
-    // return state.entities.pokemon[ownProps.match.params.pokemonId]
+    let pokemon = state.entities.pokemon[ownProps.match.params.pokemonId]
+    // debugger
+    return {
+        pokemon
+    }  
 }
 
 const mapDispatchToProps = dispatch => {
-    // return {
-    //     requestSinglePokemon: id => dispatch(requestSinglePokemon(id))
-    // }
+    return {
+        requestSinglePokemon: id => dispatch(requestSinglePokemon(id))
+    }
 }
 
-export default connect(null, null)(PokemonDetail)
+export default connect(mapStateToProps, mapDispatchToProps)(PokemonDetail)
